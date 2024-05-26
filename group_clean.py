@@ -1,6 +1,6 @@
 import pandas as pd
 
-from clean import clean
+from util import clean
 
 
 def cleanse(data, save_to: str):

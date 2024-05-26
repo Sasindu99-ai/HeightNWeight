@@ -22,3 +22,13 @@ lint:
 # Update project dependencies
 .PHONY: update
 update: install install-pre-commit ;
+
+# Train and Save best models
+.PHONY: test
+test:
+	$(POETRY) run python test.py
+
+# Try out trained models
+.PHONY: run
+run:
+	$(POETRY) run python exec.py

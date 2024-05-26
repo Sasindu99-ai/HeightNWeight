@@ -1,16 +1,6 @@
 import pandas as pd
 
-
-def clean(data, features: list):
-    """Clean the dataset based on mean, median, Q1, and Q3"""
-    for feature in features:
-        q1 = data[feature].quantile(0.25)
-        q3 = data[feature].quantile(0.75)
-        iqr = q3 - q1
-        lower_bound = q1 - 1.5 * iqr
-        upper_bound = q3 + 1.5 * iqr
-        return data[(data[feature] >= lower_bound)
-                    & (data[feature] <= upper_bound)]
+from util import clean
 
 
 def cleanse(data, save_to: str):
